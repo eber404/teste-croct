@@ -1,1 +1,1 @@
-# react-next-ts-boilerplate
+# test-croct
