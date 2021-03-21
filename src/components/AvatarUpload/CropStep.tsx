@@ -24,13 +24,14 @@ const ErrorStep: React.FC = () => {
             <SVGComponent src="/assets/icons/warn.svg" />
           </Avatar>
         </Box>
-        <Box>
+        <Box mt="-45px">
           <Text
             fontSize="16px"
             fontFamily="Inter"
-            fontWeight="500"
+            fontWeight="400"
             color="#677489"
             lineHeight="-0.02em"
+            mb="13px"
           >
             Crop
           </Text>
