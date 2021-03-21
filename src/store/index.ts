@@ -2,13 +2,13 @@ import { useMemo } from 'react'
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunkMiddleware from 'redux-thunk'
-import { ThemeState } from './theme/reducers'
 import reducers from './reducers'
+import { IAvatarUploadState } from './AvatarUpload/AvatarUploadTypes'
 
 let store
 
 interface IInitialState {
-  theme: ThemeState
+  avatarUpload: IAvatarUploadState
 }
 
 function initStore(initialState: IInitialState) {

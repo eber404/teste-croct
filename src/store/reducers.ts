@@ -1,12 +1,13 @@
 import { combineReducers } from 'redux'
-import { themeReducer, ThemeState } from './theme/reducers'
+import { IAvatarUploadState } from './AvatarUpload/AvatarUploadTypes'
+import { avatarUploadReducer } from './AvatarUpload/AvatarUploadReducers'
 
 export interface IReducers {
-  theme: ThemeState
+  avatarUpload: IAvatarUploadState
 }
 
 export const reducers = {
-  theme: themeReducer
+  avatarUpload: avatarUploadReducer
 }
 
 export default combineReducers(reducers)
