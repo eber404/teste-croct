@@ -1380,6 +1380,14 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.3.tgz#2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7"
   integrity sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
 
+"@types/react-cropper@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@types/react-cropper/-/react-cropper-1.3.0.tgz#7df76dcff3aa264b72a786d56e7ad1b32d8440dc"
+  integrity sha512-/sPBcoIEUIvwogW49I7v6MCnuhjxL08WLTIPClu8RC2tiQ0QNXGiB1bNy8SFzOQdvpjvdv3fhZ47IWNeQiX8wQ==
+  dependencies:
+    "@types/react" "*"
+    cropperjs "^1.5.5"
+
 "@types/react-inlinesvg@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@types/react-inlinesvg/-/react-inlinesvg-1.0.0.tgz#c7c1e24afe26e67ae7608ab4b3a6ff3ede3b0782"
@@ -2637,7 +2645,7 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-cropperjs@^1.5.11:
+cropperjs@^1.5.11, cropperjs@^1.5.5:
   version "1.5.11"
   resolved "https://registry.yarnpkg.com/cropperjs/-/cropperjs-1.5.11.tgz#502ae6d8ca098b124de6813601cca70015879fc0"
   integrity sha512-SJUeBBhtNBnnn+UrLKluhFRIXLJn7XFPv8QN1j49X5t+BIMwkgvDev541f96bmu8Xe0TgCx3gON22KmY/VddaA==
@@ -5345,6 +5353,13 @@ randomfill@^1.0.3:
     randombytes "^2.0.5"
     safe-buffer "^5.1.0"
 
+react-cropper@^2.1.7:
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/react-cropper/-/react-cropper-2.1.7.tgz#f9f8127b9516fecc44f918dd331107bfc32adfaf"
+  integrity sha512-dGp2l2wSh4KubWx3PQZIP27fV4shPYjIvm972IqJZdzi/fpDsB6s3GKEH54mk0gy18+80d3WnlgAP2xJ/o8+yw==
+  dependencies:
+    cropperjs "^1.5.11"
+
 react-dom@16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
@@ -5354,6 +5369,13 @@ react-dom@16.13.1:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     scheduler "^0.19.1"
+
+react-file-drop@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/react-file-drop/-/react-file-drop-3.1.2.tgz#9e545abddc2790110c262d9fd0718ad43c71b56e"
+  integrity sha512-fhujAloK9AIDzu18ltGrYe8Pk9NuXdCc8MrFgLNPJJS22B/GdTwD7Pz4BCCUiX+4sFZr42L4AZM7RsJN2xu1BQ==
+  dependencies:
+    prop-types "^15.7.2"
 
 react-from-dom@^0.5.1:
   version "0.5.1"

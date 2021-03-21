@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { Box } from 'rebass/styled-components'
 import styled from 'styled-components'
 import { IStyledProps } from '../interfaces/IStyledProps'
-import AvatarUpload from '../components/AvatarUpload'
+import AvatarUpload from '../components/AvatarUpload/index'
 
 const Home: React.FC = (props: IStyledProps) => {
   return (

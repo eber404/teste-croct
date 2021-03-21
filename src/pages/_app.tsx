@@ -9,6 +9,8 @@ import { theme } from '../styles/themes/index'
 import Layout from '../layout'
 import { ThemeProvider } from 'styled-components'
 
+import 'cropperjs/dist/cropper.css'
+
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const store = useStore(pageProps.initialReduxState)
 
