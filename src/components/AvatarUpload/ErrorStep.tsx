@@ -3,13 +3,12 @@ import { Text } from 'rebass/styled-components'
 import { Flex, Box } from 'reflexbox'
 import styled from 'styled-components'
 import SVGComponent from '../SVGComponent'
-import { useDispatch } from 'react-redux'
-import { setStep } from '../../store/AvatarUpload/AvatarUploadActions'
 import { AvatarUploadStepEnum } from '../../enums/AvatarUploadStepEnum'
+import { IAvatarUpload } from '../../interfaces/IAvatarUpload'
+import Avatar from '../Avatar'
+import CloseButton from '../CloseButton'
 
-const ErrorStep: React.FC = () => {
-  const dispatch = useDispatch()
-
+const ErrorStep: React.FC<IAvatarUpload> = (props: IAvatarUpload) => {
   return (
     <SFlex
       display="flex"
@@ -18,7 +17,7 @@ const ErrorStep: React.FC = () => {
       alignItems="center"
     >
       <SBox>
-        <Box display="flex">
+        <Box display="flex" mr="32px">
           <Avatar>
             <SVGComponent src="/assets/icons/warn.svg" />
           </Avatar>
@@ -40,13 +39,16 @@ const ErrorStep: React.FC = () => {
             letterSpacing="-0.02em"
             lineHeight="180%"
             sx={{ textDecoration: 'underline', cursor: 'pointer' }}
-            onClick={() =>
-              dispatch(setStep({ step: AvatarUploadStepEnum.INITIAL }))
-            }
+            onClick={() => props.setStep(AvatarUploadStepEnum.INITIAL)}
           >
             Try again
           </Text>
         </Box>
+        <CloseButton
+          ml="auto"
+          mt="-90px"
+          callback={() => props.setStep(AvatarUploadStepEnum.INITIAL)}
+        />
       </SBox>
     </SFlex>
   )
@@ -66,18 +68,6 @@ const SBox = styled.div`
   align-items: center;
   width: calc(100% - 64px);
   height: 100%;
-`
-
-const Avatar = styled.div`
-  display: flex;
-  flex-shrink: 0;
-  justify-content: center;
-  align-items: center;
-  width: 113px;
-  height: 113px;
-  background: #c3cbd5;
-  border-radius: 100%;
-  margin-right: 32px;
 `
 
 export default ErrorStep

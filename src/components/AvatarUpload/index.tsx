@@ -1,35 +1,33 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useState } from 'react'
 import { AvatarUploadStepEnum } from '../../enums/AvatarUploadStepEnum'
-import { IReducers } from '../../store/reducers'
 import InitialStep from './InitialStep'
 import ErrorStep from './ErrorStep'
 import CropStep from './CropStep'
 
 const AvatarUpload: React.FC = () => {
-  const { avatarUpload } = useSelector((state: IReducers) => state)
+  const [step, setStep] = useState(AvatarUploadStepEnum.INITIAL)
 
-  const stepHandler = (step: AvatarUploadStepEnum) => {
-    switch (step) {
-      case AvatarUploadStepEnum.INITIAL: {
-        return <CropStep />
-      }
+  switch (step) {
+    case AvatarUploadStepEnum.INITIAL: {
+      return <InitialStep setStep={setStep} />
+    }
 
-      case AvatarUploadStepEnum.ERROR: {
-        return <ErrorStep />
-      }
+    case AvatarUploadStepEnum.CROP: {
+      return <CropStep setStep={setStep} />
+    }
 
-      case AvatarUploadStepEnum.CROP: {
-        return <CropStep />
-      }
+    case AvatarUploadStepEnum.SUCCESS: {
+      return <InitialStep setStep={setStep} />
+    }
 
-      default: {
-        return <InitialStep />
-      }
+    case AvatarUploadStepEnum.ERROR: {
+      return <ErrorStep setStep={setStep} />
+    }
+
+    default: {
+      return <InitialStep setStep={setStep} />
     }
   }
-
-  return stepHandler(avatarUpload.step)
 }
 
 export default AvatarUpload
