@@ -1,11 +1,9 @@
-import { AvatarUploadStepEnum } from '../../enums/AvatarUploadStepEnum'
-
 export interface IAvatarUploadState {
-  step: AvatarUploadStepEnum
+  imageUrl?: string
 }
 
 export enum AvatarUploadActionTypes {
-  SET_STEP = 'SET_STEP'
+  SET_FILE = 'SET_FILE'
 }
 
 export interface IAvatarUploadActions {

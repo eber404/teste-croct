@@ -5,17 +5,17 @@ import {
 } from './AvatarUploadTypes'
 
 const INITIAL_STATE: IAvatarUploadState = {
-  step: 0
+  imageUrl: null
 }
 
-// COUNTER REDUCER
 export const avatarUploadReducer = (
   state: IAvatarUploadState = INITIAL_STATE,
   actions: IAvatarUploadActions
 ): IAvatarUploadState => {
   switch (actions.type) {
-    case AvatarUploadActionTypes.SET_STEP:
-      return { ...state, step: actions.avatarUpload.step }
+    case AvatarUploadActionTypes.SET_FILE:
+      return { ...state, imageUrl: actions.avatarUpload.imageUrl }
+
     default:
       return state
   }

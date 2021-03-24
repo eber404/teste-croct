@@ -4,11 +4,11 @@ import {
   IAvatarUploadActions
 } from './AvatarUploadTypes'
 
-export const setStep = (
+export const setAvatar = (
   avatarUpload: IAvatarUploadState
 ): IAvatarUploadActions => {
   return {
-    type: AvatarUploadActionTypes.SET_STEP,
+    type: AvatarUploadActionTypes.SET_FILE,
     avatarUpload
   }
 }
