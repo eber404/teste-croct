@@ -11,7 +11,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setAvatar } from '../../store/AvatarUpload/AvatarUploadActions'
 import { IReducers } from '../../store/reducers'
 import Avatar from '../Avatar'
-import { display, DisplayProps, flex, FlexProps } from 'styled-system'
 
 const AvatarUpload: React.FC<IAvatarUpload> = (props: IAvatarUpload) => {
   const { avatarUpload } = useSelector((state: IReducers) => state)
@@ -39,14 +38,18 @@ const AvatarUpload: React.FC<IAvatarUpload> = (props: IAvatarUpload) => {
 
   return (
     <SFileDrop onDrop={(files, event) => dropHandler(files, event)}>
-      <SFlex display="flex">
-        <Box ml="31px" mr="50px" my="auto">
-          {!avatarUpload.imageUrl ? null : (
+      <SFlex
+        display="flex"
+        justifyContent={avatarUpload.imageUrl ? null : 'center'}
+        alignItems={avatarUpload.imageUrl ? null : 'center'}
+      >
+        {!avatarUpload.imageUrl ? null : (
+          <Box ml="31px" mr="50px" my="auto">
             <Avatar>
               <img src={avatarUpload.imageUrl} />
             </Avatar>
-          )}
-        </Box>
+          </Box>
+        )}
         <Box
           display="flex"
           flexDirection="column"

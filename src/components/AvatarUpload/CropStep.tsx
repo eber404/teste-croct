@@ -41,6 +41,7 @@ const CropStep: React.FC<IAvatarUpload> = (props: IAvatarUpload) => {
       props.setStep(AvatarUploadStepEnum.ERROR)
     }
   }, [croppedAreaPixels])
+
   return (
     <SFlex
       display="flex"
@@ -89,11 +90,7 @@ const CropStep: React.FC<IAvatarUpload> = (props: IAvatarUpload) => {
           />
           <SaveButton onClick={saveImageHandler}>Save</SaveButton>
         </Box>
-        <CloseButton
-          ml="auto"
-          mt="-90px"
-          callback={() => props.setStep(AvatarUploadStepEnum.INITIAL)}
-        />
+        <CloseButton ml="auto" mt="-90px" callback={() => props.resetSteps()} />
       </SBox>
     </SFlex>
   )

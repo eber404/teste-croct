@@ -3,7 +3,6 @@ import { Text } from 'rebass/styled-components'
 import { Flex, Box } from 'reflexbox'
 import styled from 'styled-components'
 import SVGComponent from '../SVGComponent'
-import { AvatarUploadStepEnum } from '../../enums/AvatarUploadStepEnum'
 import { IAvatarUpload } from '../../interfaces/IAvatarUpload'
 import Avatar from '../Avatar'
 import CloseButton from '../CloseButton'
@@ -39,16 +38,12 @@ const ErrorStep: React.FC<IAvatarUpload> = (props: IAvatarUpload) => {
             letterSpacing="-0.02em"
             lineHeight="180%"
             sx={{ textDecoration: 'underline', cursor: 'pointer' }}
-            onClick={() => props.setStep(AvatarUploadStepEnum.INITIAL)}
+            onClick={() => props.resetSteps()}
           >
             Try again
           </Text>
         </Box>
-        <CloseButton
-          ml="auto"
-          mt="-90px"
-          callback={() => props.setStep(AvatarUploadStepEnum.INITIAL)}
-        />
+        <CloseButton ml="auto" mt="-90px" callback={() => props.resetSteps()} />
       </SBox>
     </SFlex>
   )
