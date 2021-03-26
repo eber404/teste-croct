@@ -3,7 +3,5 @@ export const validateFileType = (fileType: string): boolean => {
 
   const isValid = validTypes.includes(fileType)
 
-  console.log(`file type ${fileType} is ${isValid}`)
-
   return isValid
 }

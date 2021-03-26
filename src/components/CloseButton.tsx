@@ -10,11 +10,7 @@ export interface ICloseButton extends BoxProps {
 const CloseButton: React.FC<ICloseButton> = (props: ICloseButton) => {
   return (
     <SBox {...props} onClick={() => props.callback()}>
-      <SVGComponent
-        src="/assets/icons/close.svg"
-        marginLeft="auto"
-        marginBottom="auto"
-      />
+      <SVGComponent src="/assets/icons/close.svg" ml="auto" mb="auto" />
     </SBox>
   )
 }
